@@ -9,11 +9,10 @@ export default function MetamaskSignUpButton() {
   useEffect(() => {
     const web3 = new Web3(Web3.givenProvider);
     web3.eth.getCoinbase().then(coinbase => setCoinbase(coinbase));
-
   }, []);
 
   return (
-    <button onClick={() => signUp(coinbase)}>
+    <button onClick={() => signUp(coinbase).then(msg => alert(msg))}>
       <span>Register</span>
     </button>
   );

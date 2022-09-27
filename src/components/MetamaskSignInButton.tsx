@@ -17,7 +17,7 @@ export default function MetamaskSignInButton() {
     nonce(coinbase).then((nonce) => {
       web3?.eth.personal.sign(nonce, coinbase, "")
         .then((signature) =>
-          signIn(coinbase, signature));
+          signIn(coinbase, signature)).then(msg => alert(msg));
     });
   };
 

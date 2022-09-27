@@ -28,7 +28,6 @@ export const signUp = async (address: string) => {
 };
 
 export const nonce = async (address: string) => {
-    const params = { address: address };
     const response = await fetch(`${baseUrl}/nonce/${address}`);
     const result: RequestPayload = await response.json();
     console.log(result);
