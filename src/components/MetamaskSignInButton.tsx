@@ -8,7 +8,8 @@ export default function MetamaskSignInButton() {
   const [web3, setWeb3] = useState<Web3>();
 
   useEffect(() => {
-    setWeb3(new Web3(Web3.givenProvider));
+    const web3 = new Web3(Web3.givenProvider);
+    setWeb3(web3);
     web3?.eth.getCoinbase().then(coinbase => setCoinbase(coinbase));
   }, []);
 
